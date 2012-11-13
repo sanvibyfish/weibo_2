@@ -93,10 +93,15 @@ module WeiboOAuth2
     def remind
       @remind ||= WeiboOAuth2::Api::V2::Remind.new(@access_token) if @access_token      
     end
+
+    def place
+      @place ||= WeiboOAuth2::Api::V2::Place.new(@access_token) if @access_token      
+    end
     
     def auth_code
       @auth_code ||= WeiboOAuth2::Strategy::AuthCode.new(self)
     end
+
     
   end 
 end
